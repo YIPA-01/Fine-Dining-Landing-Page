@@ -1,24 +1,11 @@
-# 🍽️ Restaurant Reda
+# Restaurant Reda
 
-> **A sophisticated Nordic fine dining restaurant website inspired by Noma Projects**
+> **A sophisticated fine dining restaurant website inspired by Noma Projects**
 
 Restaurant Reda is an elegant, modern web application showcasing a high-end Nordic cuisine restaurant. Built with React and styled with a minimalist aesthetic inspired by the renowned Noma Projects, this project demonstrates advanced front-end development techniques and sophisticated UI/UX design principles.
 
-## ✨ Features
 
-### 🎨 **Design & Aesthetics**
-- **Noma-Inspired Design**: Authentic minimalist aesthetic with clean typography and structured layouts
-- **Responsive Design**: Seamlessly adapts to all screen sizes and devices
-- **Smooth Animations**: Elegant transitions powered by Framer Motion
-- **Modern Typography**: Custom font combinations (Playfair Display + Inter) for sophisticated hierarchy
-
-### 🧭 **Navigation & User Experience**
-- **Glass Morphism Header**: Fixed navigation with backdrop blur effects
-- **Smooth Scrolling**: Fluid page transitions and scroll behavior
-- **Interactive Elements**: Hover effects and micro-interactions throughout
-- **Mobile-First**: Optimized mobile navigation with hamburger menu
-
-### 📄 **Pages & Components**
+### **Pages & Components**
 
 #### **Home Page**
 - Hero section with stunning visuals
@@ -50,7 +37,7 @@ Restaurant Reda is an elegant, modern web application showcasing a high-end Nord
 - Date/time picker integration
 - Reservation summary and confirmation
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### **Frontend Framework**
 - **React 19.1.0** - Latest React with modern hooks and features
@@ -73,7 +60,7 @@ Restaurant Reda is an elegant, modern web application showcasing a high-end Nord
 - **PostCSS 8.5.5** - CSS processing and optimization
 - **Autoprefixer 10.4.21** - Automatic vendor prefixing
 
-## 🚀 Getting Started
+## Getting Started
 
 ### **Prerequisites**
 - Node.js (version 18.0 or higher)
@@ -84,8 +71,8 @@ Restaurant Reda is an elegant, modern web application showcasing a high-end Nord
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/restaurant-reda.git
-   cd restaurant-reda
+   git clone https://github.com/YIPA-01/Fine-Dining-Landing-Page.git
+   cd Fine-Dining-Landing-Page
    ```
 
 2. **Install dependencies**
@@ -98,9 +85,6 @@ Restaurant Reda is an elegant, modern web application showcasing a high-end Nord
    npm run dev
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:5173` to view the application
-
 ### **Available Scripts**
 
 - `npm run dev` - Start development server
@@ -108,10 +92,10 @@ Restaurant Reda is an elegant, modern web application showcasing a high-end Nord
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint for code quality
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-restaurant-reda/
+Fine-Dining-Landing-Page/
 ├── public/                 # Static assets
 ├── src/
 │   ├── components/         # Reusable components
@@ -132,7 +116,7 @@ restaurant-reda/
 └── package.json           # Project dependencies
 ```
 
-## 🎯 Key Design Principles
+## Key Design Principles
 
 ### **Minimalist Aesthetic**
 - Clean, uncluttered layouts
@@ -158,7 +142,7 @@ restaurant-reda/
 - Hover effects that enhance usability
 - Performance-optimized animations
 
-## 🌟 Inspiration & Design Reference
+## Inspiration & Design Reference
 
 This project draws heavy inspiration from the **Noma Projects** website, incorporating:
 - Lowercase typography styling
@@ -167,7 +151,7 @@ This project draws heavy inspiration from the **Noma Projects** website, incorpo
 - Minimalist color schemes
 - Sophisticated interaction patterns
 
-## 🚀 Deployment
+## Deployment
 
 ### **Build for Production**
 ```bash
@@ -186,7 +170,7 @@ npm run build
 # Upload dist/ folder to Netlify
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -194,22 +178,17 @@ npm run build
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Noma Projects** - Design inspiration and aesthetic reference
-- **React Team** - For the amazing React framework
 - **Tailwind CSS** - For the utility-first CSS framework
 - **Framer Motion** - For smooth animations and transitions
 
-## 📧 Contact
+## Contact
 
-**Reda Yahyani** - [Your Email]
-**Project Link**: [https://github.com/yourusername/restaurant-reda](https://github.com/yourusername/restaurant-reda)
+**Reda Yahyani** - yahynaireda@gmail.com
 
 ---
 
-*Built with ❤️ and inspired by the world's finest restaurants*
+
