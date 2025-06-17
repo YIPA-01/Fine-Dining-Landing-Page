@@ -1,0 +1,2028 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    background-color: #fafafa;
+    color: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #1a1a1a;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Noma-inspired Typography */
+  .noma-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .noma-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  /* Glass Header - Noma Style */
+  .noma-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(250, 250, 250, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .noma-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .noma-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity 0.3s ease;
+  }
+
+  .noma-logo:hover {
+    opacity: 0.7;
+  }
+
+  .noma-nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+
+  .noma-nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    position: relative;
+  }
+
+  .noma-nav-link:hover,
+  .noma-nav-link.active {
+    opacity: 0.6;
+  }
+
+  .noma-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #1a1a1a;
+  }
+
+  /* Hero Section - Noma Style */
+  .noma-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .noma-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .noma-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+
+  .noma-hero-title {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .noma-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    color: rgba(255, 255, 255, 0.794);
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+  }
+
+  /* Buttons - Noma Style */
+  .noma-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  .noma-btn-primary {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+    margin-right: 1rem;
+  }
+
+  .noma-btn-primary:hover {
+    background: transparent;
+    color: #1a1a1a;
+  }
+
+  .noma-btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+
+  .noma-btn-secondary:hover {
+    background: white;
+    color: #1a1a1a;
+  }
+
+  .noma-btn-dark {
+    background: transparent;
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  .noma-btn-dark:hover {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  /* Features Section - Noma Style */
+  .noma-features {
+    padding: 8rem 0;
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .noma-features-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 4rem;
+    padding: 2rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .noma-feature-card {
+    flex: 0 0 300px;
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .noma-feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .noma-feature-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 2rem;
+    color: #f5f5f5;
+    opacity: 0.8;
+  }
+
+  .noma-feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .noma-feature-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    font-weight: 300;
+  }
+
+  /* Call to Action - Noma Style */
+  .noma-cta {
+    padding: 8rem 0;
+    background: #fafafa;
+    text-align: center;
+  }
+
+  .noma-cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-cta-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Menu Page Styles - Noma Inspired */
+  .noma-menu-page {
+    padding-top: 6rem;
+    background: #fafafa;
+  }
+
+  .noma-menu-header {
+    padding: 4rem 0 6rem;
+    text-align: center;
+    background: white;
+  }
+
+  .noma-menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-menu-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Menu Filters */
+  .noma-menu-filters {
+    padding: 3rem 0;
+    background: white;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-filter-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .noma-filter-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  .noma-filter-btn:hover,
+  .noma-filter-btn.active {
+    color: #1a1a1a;
+  }
+
+  .noma-filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 1px;
+    background: #1a1a1a;
+  }
+
+  /* Menu Grid */
+  .noma-menu-grid-section {
+    padding: 6rem 0;
+  }
+
+  .noma-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .noma-menu-card {
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .noma-menu-card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .noma-menu-placeholder-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .noma-menu-image-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-seasonal-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #1a1a1a;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .noma-menu-card-content {
+    padding: 2rem;
+  }
+
+  .noma-menu-item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-menu-item-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .noma-menu-ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .noma-ingredient-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #999;
+    background: #f8f8f8;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+  }
+
+  .noma-menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-menu-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .noma-menu-category {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Tasting Menu Section */
+  .noma-tasting-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .noma-tasting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .noma-tasting-card {
+    padding: 3rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .noma-tasting-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .noma-tasting-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-tasting-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .noma-tasting-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-tasting-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .noma-tasting-duration {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: 300;
+  }
+
+  /* Wine Section */
+  .noma-wine-section {
+    padding: 6rem 0;
+    background: #f8f8f8;
+  }
+
+  .noma-wine-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+  }
+
+  .noma-wine-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .noma-wine-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: white;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .noma-wine-option:hover {
+    transform: translateY(-3px);
+  }
+
+  .noma-wine-option h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .noma-wine-option span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  /* Animations */
+  .noma-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .noma-fade-in-delay-1 {
+    animation-delay: 0.2s;
+  }
+
+  .noma-fade-in-delay-2 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Infinite Scroll Animation */
+  .noma-scroll {
+    animation: nomaScroll 40s linear infinite;
+  }
+
+  @keyframes nomaScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .noma-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Mobile Navigation */
+  .noma-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(250, 250, 250, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .noma-mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .noma-mobile-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .noma-mobile-link:hover {
+    opacity: 0.6;
+  }
+
+  .noma-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .noma-hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #1a1a1a;
+    transition: all 0.3s ease;
+  }
+
+  .noma-hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .noma-hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .noma-hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .noma-nav {
+      padding: 1rem;
+    }
+
+    .noma-nav-links {
+      display: none;
+    }
+
+    .noma-hamburger {
+      display: flex;
+    }
+
+    .noma-features-grid {
+      gap: 2rem;
+    }
+
+    .noma-feature-card {
+      flex: 0 0 250px;
+      padding: 1.5rem;
+    }
+
+    .noma-btn {
+      padding: 0.8rem 2rem;
+      font-size: 0.8rem;
+    }
+
+    .noma-btn-primary {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      display: block;
+      text-align: center;
+    }
+
+    .noma-menu-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .noma-filter-grid {
+      gap: 1rem;
+    }
+
+    .noma-tasting-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .noma-tasting-card {
+      padding: 2rem;
+    }
+
+    .noma-wine-options {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Contact Page Styles */
+  .noma-contact-page {
+    padding-top: 6rem;
+    background: #fafafa;
+  }
+
+  .noma-contact-hero {
+    padding: 8rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .noma-contact-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .noma-contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-contact-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .noma-contact-info-section {
+    padding: 8rem 0;
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .noma-contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .noma-contact-info-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .noma-contact-info-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .noma-contact-info-icon {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+
+  .noma-contact-info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .noma-contact-info-details p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .noma-contact-form-section {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .noma-contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .noma-contact-form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-contact-form-description {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .noma-contact-form-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .noma-contact-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #1a1a1a;
+  }
+
+  .noma-contact-feature-icon {
+    font-size: 1.25rem;
+  }
+
+  .noma-contact-form-wrapper {
+    background: #fafafa;
+    padding: 3rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .noma-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .noma-form-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .noma-form-input,
+  .noma-form-select,
+  .noma-form-textarea {
+    padding: 1rem;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    background: white;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease;
+  }
+
+  .noma-form-input:focus,
+  .noma-form-select:focus,
+  .noma-form-textarea:focus {
+    outline: none;
+    border-color: #1a1a1a;
+  }
+
+  .noma-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .noma-form-submit {
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.85rem;
+  }
+
+  .noma-form-submit:hover {
+    background: transparent;
+    color: #1a1a1a;
+  }
+
+  .noma-contact-success {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-contact-success-icon {
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-contact-success h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .noma-contact-success p {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-weight: 300;
+  }
+
+  .noma-contact-map-section {
+    padding: 8rem 0;
+    background: #fafafa;
+  }
+
+  .noma-contact-map-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .noma-contact-map-description {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 4rem;
+    font-weight: 300;
+  }
+
+  .noma-contact-map-placeholder {
+    height: 400px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-map-overlay {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-map-pin {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+
+  .noma-map-info h4 {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .noma-map-info p {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-weight: 300;
+  }
+
+  .noma-contact-newsletter {
+    padding: 8rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .noma-newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-newsletter-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .noma-newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  .noma-newsletter-input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .noma-newsletter-input:focus {
+    outline: none;
+    border-color: #1a1a1a;
+  }
+
+  .noma-newsletter-button {
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.85rem;
+  }
+
+  .noma-newsletter-button:hover {
+    background: transparent;
+    color: #1a1a1a;
+  }
+
+  /* Reservation Page Styles */
+  .noma-reservation-page {
+    padding-top: 6rem;
+    background: #fafafa;
+  }
+
+  .noma-reservation-hero {
+    padding: 8rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .noma-reservation-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-reservation-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .noma-reservation-progress {
+    padding: 4rem 0;
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .noma-progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .noma-progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .noma-progress-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .noma-progress-step.active .noma-progress-circle {
+    background: white;
+    color: #1a1a1a;
+  }
+
+  .noma-progress-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .noma-progress-step.active .noma-progress-label {
+    color: white;
+  }
+
+  .noma-reservation-form-section {
+    padding: 8rem 0;
+    background: white;
+    min-height: 600px;
+  }
+
+  .noma-reservation-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fafafa;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    overflow: hidden;
+  }
+
+  .noma-form-step {
+    padding: 4rem;
+  }
+
+  .noma-step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .noma-experience-card {
+    padding: 2rem;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+  }
+
+  .noma-experience-card:hover {
+    border-color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .noma-experience-card.selected {
+    border-color: #1a1a1a;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .noma-experience-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+
+  .noma-experience-description {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .noma-experience-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-experience-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+  }
+
+  .noma-experience-duration {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  .noma-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .noma-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .noma-form-back,
+  .noma-form-next,
+  .noma-form-submit {
+    padding: 1rem 2.5rem;
+    border: 1px solid #1a1a1a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.85rem;
+  }
+
+  .noma-form-back {
+    background: transparent;
+    color: #666;
+    border-color: #666;
+  }
+
+  .noma-form-back:hover {
+    background: #666;
+    color: white;
+  }
+
+  .noma-form-next,
+  .noma-form-submit {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .noma-form-next:hover,
+  .noma-form-submit:hover {
+    background: transparent;
+    color: #1a1a1a;
+  }
+
+  .noma-reservation-summary {
+    background: white;
+    padding: 2rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    margin-bottom: 2rem;
+  }
+
+  .noma-summary-section {
+    margin-bottom: 2rem;
+  }
+
+  .noma-summary-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .noma-summary-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .noma-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .noma-summary-item {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-weight: 300;
+  }
+
+  .noma-summary-item strong {
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  .noma-summary-price {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  .noma-summary-total {
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  .noma-total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .noma-total-note {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .noma-reservation-success {
+    padding: 8rem 0;
+    background: #fafafa;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .noma-success-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 4rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .noma-success-icon {
+    width: 80px;
+    height: 80px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 2rem;
+  }
+
+  .noma-success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .noma-success-message {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .noma-success-details {
+    background: #fafafa;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .noma-success-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-weight: 300;
+  }
+
+  .noma-success-detail:last-child {
+    margin-bottom: 0;
+  }
+
+  .noma-success-detail strong {
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  .noma-success-button {
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 1px solid #1a1a1a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.85rem;
+  }
+
+  .noma-success-button:hover {
+    background: transparent;
+    color: #1a1a1a;
+  }
+
+  .noma-reservation-info {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .noma-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .noma-info-card {
+    padding: 2rem;
+    background: #fafafa;
+    text-align: center;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .noma-info-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .noma-info-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .noma-info-card p {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* Mobile Updates for About, Contact, Reservation */
+  @media (max-width: 768px) {
+    .noma-about-title,
+    .noma-contact-title,
+    .noma-reservation-title {
+      font-size: 2.5rem;
+    }
+    
+    .noma-chef-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .noma-timeline::before {
+      left: 2rem;
+    }
+    
+    .noma-timeline-item {
+      flex-direction: row;
+      padding-left: 4rem;
+    }
+    
+    .noma-timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+    
+    .noma-timeline-content {
+      margin: 0;
+    }
+    
+    .noma-timeline-dot {
+      left: 2rem;
+    }
+    
+    .noma-philosophy-grid,
+    .noma-values-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .noma-contact-form-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .noma-progress-bar {
+      gap: 2rem;
+    }
+    
+    .noma-form-step {
+      padding: 2rem;
+    }
+    
+    .noma-experiences-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .noma-form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .noma-form-buttons {
+      flex-direction: column;
+    }
+    
+    .noma-newsletter-form {
+      flex-direction: column;
+    }
+    
+    .noma-contact-info-grid,
+    .noma-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* About Page Styles - Noma Projects Inspired */
+  .noma-about-page {
+    padding-top: 6rem;
+    background: white;
+  }
+
+  .noma-about-hero {
+    padding: 8rem 0;
+    background: white;
+    text-align: center;
+  }
+
+  .noma-about-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .noma-about-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+  }
+
+  .noma-about-welcome {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #666;
+    text-transform: lowercase;
+    margin-bottom: 0;
+  }
+
+  /* Story Section */
+  .noma-story-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .noma-story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .noma-story-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-transform: lowercase;
+  }
+
+  .noma-story-intro:last-child {
+    margin-bottom: 0;
+  }
+
+  .noma-story-intro strong {
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  /* Origin Section */
+  .noma-origin-section {
+    padding: 8rem 0;
+    background: #fafafa;
+  }
+
+  .noma-origin-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .noma-origin-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-origin-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+  }
+
+  .noma-origin-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Philosophy Section - Clean Cards */
+  .noma-philosophy-section {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .noma-philosophy-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 4rem;
+    text-align: center;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .noma-philosophy-card {
+    padding: 2.5rem 2rem;
+    background: #fafafa;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+
+  .noma-philosophy-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .noma-philosophy-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-philosophy-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Team Section */
+  .noma-team-section {
+    padding: 8rem 0;
+    background: #fafafa;
+  }
+
+  .noma-team-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-team-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+  }
+
+  .noma-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .noma-team-member {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .noma-team-member:hover {
+    transform: translateY(-3px);
+  }
+
+  .noma-member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .noma-member-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  .noma-member-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  .noma-member-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+  }
+
+  .noma-member-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Values Section */
+  .noma-values-section {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .noma-values-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .noma-values-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-values-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .noma-values-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Call to Action */
+  .noma-about-cta {
+    padding: 8rem 0;
+    background: #fafafa;
+    text-align: center;
+  }
+
+  .noma-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .noma-cta-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+  }
+
+  .noma-cta-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+
+  .noma-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .noma-cta-buttons .noma-btn {
+    text-transform: lowercase;
+    font-size: 0.95rem;
+  }
+
+  .noma-cta-buttons .noma-btn-secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  .noma-cta-buttons .noma-btn-secondary:hover {
+    background: #1a1a1a;
+    color: white;
+  }
+} 
