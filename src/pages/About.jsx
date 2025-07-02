@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const teamMembers = [
@@ -230,12 +231,12 @@ const About = () => {
               Join us for a culinary journey that celebrates the seasons, honors tradition, and embraces the unexpected.
             </p>
             <div className="noma-cta-buttons">
-              <a href="/reservation" className="noma-btn noma-btn-primary">
+              <Link to="/reservation" className="noma-btn noma-btn-primary">
                 make a reservation
-              </a>
-              <a href="/menu" className="noma-btn noma-btn-secondary">
+              </Link>
+              <Link to="/menu" className="noma-btn noma-btn-secondary">
                 explore our menu
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

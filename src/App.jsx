@@ -9,7 +9,7 @@ import './styles/index.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/la-cuchina-de-mama">
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
