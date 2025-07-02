@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const teamMembers = [
     {
-      name: 'Reda Yahyani',
-      title: 'Chef & Creative Director',
-      location: 'Morocco / Denmark',
-      description: 'Born in Morocco and trained across Europe, Reda brings a unique perspective to Nordic cuisine, blending traditional techniques with innovative approaches to fermentation and foraging.'
-    },
-    {
       name: 'Lena Henriksen',
       title: 'Head of Operations',
       location: 'Denmark',
@@ -40,37 +34,13 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="noma-about-hero-content"
           >
-            <h1 className="noma-about-main-title">
-              taste the seasons
+            <h1 className="noma-section-title">
+              Taste the seasons
             </h1>
-            <p className="noma-about-welcome">
-              welcome to our world of flavor
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Section - Noma Projects Style */}
-      <section className="noma-story-section">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="noma-story-content"
-          >
-            <p className="noma-story-intro">
-              Everything we do starts by stepping into nature, and everything we share is produced by hand in our kitchen right here in Copenhagen.
-            </p>
-            <p className="noma-story-intro">
-              We make it a point never to repeat ourselves.
-            </p>
-            <p className="noma-story-intro">
-              Because we like to <strong>Try New Things</strong>.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* How We Came to Be Section */}
       <section className="noma-origin-section">
@@ -81,7 +51,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="noma-origin-content"
           >
-            <h2 className="noma-origin-title">how we came to be</h2>
+            <h2 className="noma-origin-title">How we came to be</h2>
             <div className="noma-origin-text">
               <p>
                 Building on years of culinary innovation, Restaurant Reda was founded in 2018 to share ingredients from the past, present, and sometimes even future of Nordic cuisine: a place in Copenhagen where the team has an endless fascination with the idea that there is always more deliciousness out there, just waiting to be uncovered.
@@ -103,7 +73,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="noma-philosophy-title"
           >
-            our approach
+            Our approach
           </motion.h2>
           
           <div className="noma-philosophy-grid">
@@ -113,8 +83,8 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="noma-philosophy-card"
             >
-              <h3>fermentation</h3>
-              <p>Our laboratory transforms simple ingredients through time and patience, creating complex flavors that define our cuisine.</p>
+              <h3>Fermentation</h3>
+              <p>Our laboratory transforms simple ingredients through time and patience, creating complex flavors.</p>
             </motion.div>
             
             <motion.div
@@ -123,8 +93,8 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="noma-philosophy-card"
             >
-              <h3>foraging</h3>
-              <p>We step into nature to discover wild ingredients, bringing the essence of Scandinavian forests and shores to our kitchen.</p>
+              <h3>Foraging</h3>
+              <p>We discover wild ingredients from nature, bringing Scandinavian forests to our kitchen.</p>
             </motion.div>
             
             <motion.div
@@ -133,8 +103,8 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="noma-philosophy-card"
             >
-              <h3>seasonality</h3>
-              <p>We honor the natural rhythm of seasons, crafting menus that celebrate the peak moments of each ingredient.</p>
+              <h3>Seasonality</h3>
+              <p>We honor natural rhythms, crafting menus that celebrate peak moments of each ingredient.</p>
             </motion.div>
             
             <motion.div
@@ -143,8 +113,8 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="noma-philosophy-card"
             >
-              <h3>innovation</h3>
-              <p>Tradition meets creativity as we push boundaries while respecting the fundamental principles of great cooking.</p>
+              <h3>Innovation</h3>
+              <p>Tradition meets creativity as we push boundaries while respecting fundamental principles.</p>
             </motion.div>
           </div>
         </div>
@@ -159,7 +129,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="noma-team-title"
           >
-            our team
+            Our team
           </motion.h2>
           
           <motion.p

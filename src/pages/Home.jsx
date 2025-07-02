@@ -21,11 +21,6 @@ const WineIcon = () => (
   </svg>
 );
 
-const StarIcon = () => (
-  <svg className="noma-feature-icon" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-  </svg>
-);
 
 const CandleIcon = () => (
   <svg className="noma-feature-icon" fill="currentColor" viewBox="0 0 24 24">
@@ -67,11 +62,6 @@ const Home = () => {
       icon: <WineIcon />,
       title: 'Premium Wine',
       description: 'Carefully curated wine selection from around the world',
-    },
-    {
-      icon: <StarIcon />,
-      title: 'Michelin Quality',
-      description: 'Restaurant-quality dishes with attention to every detail',
     },
     {
       icon: <CandleIcon />,
@@ -122,7 +112,7 @@ const Home = () => {
             Experience the finest dining with our carefully crafted menu inspired by nature and tradition
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
@@ -167,7 +157,7 @@ const Home = () => {
       {/* Call to Action */}
       <section className="noma-cta">
         <div className="container">
-          <h2 className="noma-cta-title">Ready to Experience Fine Dining?</h2>
+          <h2 className="noma-section-title">Ready to Experience Fine Dining?</h2>
           <p className="noma-cta-subtitle">
             Book your table now and enjoy an unforgettable culinary journey crafted with passion and precision
           </p>
