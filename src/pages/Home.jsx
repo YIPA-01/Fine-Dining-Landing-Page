@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import heroImage from '/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
 
 // Professional SVG Icons - Simplified for Noma style
 const FineDiningIcon = () => (
@@ -100,7 +101,7 @@ const Home = () => {
       <section 
         className="noma-hero"
         style={{
-          backgroundImage: 'url("/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")',
+          backgroundImage: `url("${heroImage}")`,
         }}
       >
         <div className="noma-hero-content">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '/logo.svg';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -19,7 +20,7 @@ const Header = () => {
         <nav className="noma-nav">
           <Link to="/" className="noma-logo">
             <img 
-              src="/logo.svg" 
+              src={logo} 
               alt="la cuchina de mama logo" 
               className="noma-logo-image"
             />
