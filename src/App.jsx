@@ -5,11 +5,13 @@ import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Reservation from './pages/Reservation';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/index.css';
 
 function App() {
   return (
     <Router basename="/la-cuchina-de-mama">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
