@@ -21,7 +21,7 @@ const Menu = () => {
       description: 'Wild mushroom broth with fermented herbs and pine essence',
       ingredients: ['wild mushrooms', 'fermented herbs', 'pine oil', 'sea salt'],
       price: 'DKK 185',
-      image: '/images/mushroom-consomme.jpg',
+      image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     },
     {
@@ -31,7 +31,7 @@ const Menu = () => {
       description: 'House-cured trout with elderflower vinegar and wild greens',
       ingredients: ['ocean trout', 'elderflower vinegar', 'wild greens', 'sea buckthorn'],
       price: 'DKK 225',
-      image: '/images/cured-trout.jpg',
+      image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=300&fit=crop&crop=center',
       seasonal: false
     },
     {
@@ -41,7 +41,7 @@ const Menu = () => {
       description: 'Dry-aged beef with fermented mushroom sauce and roasted vegetables',
       ingredients: ['aged beef', 'mushroom garum', 'root vegetables', 'wild herbs'],
       price: 'DKK 485',
-      image: '/images/aged-beef.jpg',
+      image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=400&h=300&fit=crop&crop=center',
       seasonal: false
     },
     {
@@ -51,7 +51,7 @@ const Menu = () => {
       description: 'Seasonal vegetables with fermented plant juices and edible flowers',
       ingredients: ['seasonal vegetables', 'plant juices', 'edible flowers', 'herb oil'],
       price: 'DKK 385',
-      image: '/images/vegetable-garden.jpg',
+      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     },
     {
@@ -61,7 +61,7 @@ const Menu = () => {
       description: 'Frozen parfait with wild rose petals and raw honey',
       ingredients: ['wild rose', 'raw honey', 'cream', 'rose vinegar'],
       price: 'DKK 165',
-      image: '/images/rose-parfait.jpg',
+      image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     },
     {
@@ -71,7 +71,7 @@ const Menu = () => {
       description: 'Naturally fermented fruits with ancient grains and cultured cream',
       ingredients: ['fermented fruits', 'ancient grains', 'cultured cream', 'bee pollen'],
       price: 'DKK 145',
-      image: '/images/fermented-fruit.jpg',
+      image: 'https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400&h=300&fit=crop&crop=center',
       seasonal: false
     },
     {
@@ -81,19 +81,10 @@ const Menu = () => {
       description: 'House-made elixir with pine needles and juniper berries',
       ingredients: ['pine needles', 'juniper berries', 'spring water', 'wild honey'],
       price: 'DKK 95',
-      image: '/images/pine-elixir.jpg',
+      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     },
-    {
-      id: 8,
-      name: 'Fermented Tea Blend',
-      category: 'Beverages',
-      description: 'Proprietary blend of fermented teas with wild herbs',
-      ingredients: ['fermented tea', 'wild herbs', 'flower petals', 'tree bark'],
-      price: 'DKK 75',
-      image: '/images/fermented-tea.jpg',
-      seasonal: false
-    },
+
     {
       id: 9,
       name: 'Autumn Harvest Tasting',
@@ -101,7 +92,7 @@ const Menu = () => {
       description: 'Seven-course exploration of autumn flavors and preservation techniques',
       ingredients: ['seasonal produce', 'fermented elements', 'wild ingredients', 'preserved items'],
       price: 'DKK 1,250',
-      image: '/images/autumn-harvest.jpg',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     },
     {
@@ -111,7 +102,7 @@ const Menu = () => {
       description: 'Five-course celebration of spring\'s first wild ingredients',
       ingredients: ['spring shoots', 'wild flowers', 'young herbs', 'fresh saps'],
       price: 'DKK 950',
-      image: '/images/spring-awakening.jpg',
+      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop&crop=center',
       seasonal: true
     }
   ];
@@ -180,9 +171,12 @@ const Menu = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="noma-menu-card-image">
-                  <div className="noma-menu-placeholder-image">
-                    <span className="noma-menu-image-text">{item.name.split(' ')[0]}</span>
-                  </div>
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="noma-menu-item-image"
+                    loading="lazy"
+                  />
                   {item.seasonal && (
                     <span className="noma-seasonal-badge">Seasonal</span>
                   )}

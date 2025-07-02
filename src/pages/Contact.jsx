@@ -42,7 +42,7 @@ const Contact = () => {
       title: 'Reservations',
       details: [
         '+45 32 96 32 97',
-        'reservations@restaurantreda.dk',
+        'reservations@lacuchinademama.dk',
         'Open Tue-Sat'
       ],
       icon: '📞'
@@ -59,7 +59,7 @@ const Contact = () => {
     {
       title: 'Private Events',
       details: [
-        'events@restaurantreda.dk',
+        'events@lacuchinademama.dk',
         '+45 32 96 32 98',
         'Capacity: 12-40 guests'
       ],
@@ -224,7 +224,7 @@ const Contact = () => {
           >
             <h2 className="noma-section-title">Find Us</h2>
             <p className="noma-contact-map-description">
-              Located in the heart of Copenhagen, Restaurant Reda offers an intimate 
+              Located in the heart of Copenhagen, la cuchina de mama offers an intimate 
               dining experience in a beautifully restored historic building.
             </p>
             
@@ -232,7 +232,7 @@ const Contact = () => {
               <div className="noma-map-overlay">
                 <div className="noma-map-pin">📍</div>
                 <div className="noma-map-info">
-                  <h4>Restaurant Reda</h4>
+                  <h4>la cuchina de mama</h4>
                   <p>Strandgade 93, Copenhagen</p>
                 </div>
               </div>

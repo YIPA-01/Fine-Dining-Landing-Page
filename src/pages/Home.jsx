@@ -110,7 +110,7 @@ const Home = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="noma-hero-title"
           >
-            Restaurant
+            la cuchina de mama
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

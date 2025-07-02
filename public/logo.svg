@@ -1,0 +1,49 @@
+<svg width="220" height="40" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Decorative border frame -->
+  <rect x="2" y="2" width="216" height="56" stroke="#1a1a1a" stroke-width="0.5" fill="none" rx="2"/>
+  
+  <!-- Top decorative flourish -->
+  <path d="M60 8 Q70 4 80 8 Q90 12 100 8 Q110 4 120 8 Q130 12 140 8 Q150 4 160 8" 
+        stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+  
+  <!-- Bottom decorative flourish -->
+  <path d="M60 52 Q70 56 80 52 Q90 48 100 52 Q110 56 120 52 Q130 48 140 52 Q150 56 160 52" 
+        stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+  
+  <!-- Central decorative element - chef's hat silhouette -->
+  <path d="M20 25 Q15 20 20 15 Q25 12 30 15 Q35 20 30 25 Q25 28 20 25 Z" 
+        fill="#1a1a1a" opacity="0.1"/>
+  <path d="M20 25 Q15 20 20 15 Q25 12 30 15 Q35 20 30 25" 
+        stroke="#1a1a1a" stroke-width="0.8" fill="none"/>
+  
+  <!-- Right decorative element - wine glass silhouette -->
+  <path d="M190 15 Q185 20 190 25 Q195 30 200 25 Q205 20 200 15 Q195 12 190 15 Z" 
+        fill="#1a1a1a" opacity="0.1"/>
+  <path d="M190 15 Q185 20 190 25 Q195 30 200 25 Q205 20 200 15" 
+        stroke="#1a1a1a" stroke-width="0.8" fill="none"/>
+  
+  <!-- Main text "La Cuchina" -->
+  <text x="110" y="28" text-anchor="middle" font-family="Playfair Display, serif" 
+        font-size="16" font-weight="400" fill="#1a1a1a" letter-spacing="2px">
+    La Cuchina
+  </text>
+  
+  <!-- Subtitle "de Mama" -->
+  <text x="110" y="44" text-anchor="middle" font-family="Playfair Display, serif" 
+        font-size="12" font-weight="300" fill="#666" letter-spacing="4px" font-style="italic">
+    de Mama
+  </text>
+  
+  <!-- Central decorative divider -->
+  <line x1="70" y1="35" x2="90" y2="35" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="95" cy="35" r="1.5" fill="#1a1a1a"/>
+  <line x1="100" y1="35" x2="120" y2="35" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="125" cy="35" r="1.5" fill="#1a1a1a"/>
+  <line x1="130" y1="35" x2="150" y2="35" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Corner decorative elements -->
+  <circle cx="12" cy="12" r="2" stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+  <circle cx="208" cy="12" r="2" stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+  <circle cx="12" cy="48" r="2" stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+  <circle cx="208" cy="48" r="2" stroke="#1a1a1a" stroke-width="0.5" fill="none"/>
+</svg> 

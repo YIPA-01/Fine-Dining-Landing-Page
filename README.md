@@ -1,4 +1,4 @@
-# Restaurant Reda
+
 
 > **A sophisticated fine dining restaurant website inspired by Noma Projects**
 

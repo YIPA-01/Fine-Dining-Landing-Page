@@ -6,6 +6,7 @@ const navigation = [
   { name: 'Menu', href: '/menu' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Reservations', href: '/reservation' },
 ];
 
 const Header = () => {
@@ -17,7 +18,11 @@ const Header = () => {
       <header className="noma-header">
         <nav className="noma-nav">
           <Link to="/" className="noma-logo">
-          Restaurant Reda
+            <img 
+              src="/logo.svg" 
+              alt="la cuchina de mama logo" 
+              className="noma-logo-image"
+            />
           </Link>
           
           <ul className="noma-nav-links">
@@ -36,7 +41,7 @@ const Header = () => {
             })}
           </ul>
           
-          <div className="noma-hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <div className={`noma-hamburger ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <span></span>
             <span></span>
             <span></span>
@@ -56,13 +61,6 @@ const Header = () => {
             {item.name}
           </Link>
         ))}
-        <Link
-          to="/reservation"
-          className="noma-mobile-link"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Reservations
-        </Link>
       </div>
     </>
   );
