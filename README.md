@@ -2,6 +2,7 @@
 
 > **A sophisticated fine dining restaurant website inspired by Noma Projects**
 
+
 Restaurant Reda is an elegant, modern web application showcasing a high-end Nordic cuisine restaurant. Built with React and styled with a minimalist aesthetic inspired by the renowned Noma Projects, this project demonstrates advanced front-end development techniques and sophisticated UI/UX design principles.
 
 
