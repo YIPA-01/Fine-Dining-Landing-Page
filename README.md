@@ -1,7 +1,7 @@
 
 
 > **A sophisticated fine dining restaurant website inspired by Noma Projects**
-Live Preview : https://yipa-01.github.io/la-cuchina-de-mama
+> Live Preview : https://yipa-01.github.io/la-cuchina-de-mama
 
 Restaurant Reda is an elegant, modern web application showcasing a high-end Nordic cuisine restaurant. Built with React and styled with a minimalist aesthetic inspired by the renowned Noma Projects, this project demonstrates advanced front-end development techniques and sophisticated UI/UX design principles.
 
